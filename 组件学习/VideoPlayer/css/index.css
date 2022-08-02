@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #666;
+    display: flex;
+    flex-direction: column;  /*竖着摆放*/
+    align-items: center;  /*在弹性容器中放置在中间*/
+    justify-content: center; /*在column中放置中间*/
+    max-height: 100vh; /*定义窗口的大小*/
+    margin: 0;
+}
+h1{
+    color: skyblue;
+}
+.screen{
+    cursor: pointer;
+    width: 60%;
+    background-color: black !important;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.controls{
+    background:#333;
+    color: white;
+    width: 60%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /*内边距*/
+}
+.controls .start{
+    width: 50px;
+    height: 50px;
+}
+.controls .btn{
+    border: 0px;
+    background: transparent;
+    cursor: pointer;
+}
+.controls .stop{
+    width: 50px;
+    height: 50px;
+}
+.controls .clear{
+    width: 50px;
+    height: 50px;
+}
+.controls .timestamp{
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;  /*左边的距离*/
+}
+.btn:focus{
+    outline: None;
+}

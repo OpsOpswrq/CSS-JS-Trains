@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VideoPlayer</title>
+    <script type="text/javascript" src="../BreakOut!/js/jQuery.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/progress.css">
+</head>
+<body>
+    <h1>Custom video player</h1>
+    <video
+        src="./video/test.mp4"
+        id="video"
+        class="screen"
+        poster="./img/poster.png"
+    ></video> <!--poster 属性描述了在视频加载时或在用户点击播放按钮前显示的图片-->
+    <div class="controls">
+        <button class="btn" id="play">
+            <img src="./img/start.png" class="start">
+        </button>
+        <button class="btn" id="stop">
+            <img src="img/clear.png" class="stop">
+        </button>
+        <input
+            type="range"
+            id="progress"
+            class="progress"
+            min="0"
+            max="100"
+            step="0.1"
+            value="0"
+        >
+        <span class="timestamp" id="timestamp">00:00</span>
+    </div>
+</body>
+</html>

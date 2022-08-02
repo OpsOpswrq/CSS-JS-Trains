@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+/*全局的样式设置*/
+body{
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh; /*视口定高度*/
+    margin:0px;  /*外边框为0*/
+}
+h1{
+    font-size:45px;
+    color: white;
+}
+canvas{
+    background-color: #f0f0f0;
+    display: block;  /*块状元素*/
+    border-radius: 5px; /*设置圆角*/ 
+}
+.btn{
+    cursor: pointer;  /*设置该区域下的鼠标的样式为pointer*/
+    border:0px;  /*让边框的宽度为0*/
+    padding:10px 20px;  /*左右 上下*/
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: #222;
+}
+.btn:active{
+    transform: scale(0.95); /*激活的时候会将整个组件变小*/
+}
+.rules-btn{
+    position: absolute;
+    top:5%;
+    left:5%;
+}
+.rules{
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: #333; /*设置背景的颜色*/
+    color: white; /*设置字体的颜色*/
+    min-height: 100vh;
+    width:400px;
+    padding: 20px;
+    line-height: 1.5rem;
+    transform: translateX(-400px);  /*先让他先消失，不会使页面元素变化*/
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;  /*先快后慢*/
+    transition-property: transform; /*控制属性transform*/
+}
+.show{ /*通过动态添加class属性实现效果*/
+    transform: translateX(0px); /*进行平移操作*/
+}

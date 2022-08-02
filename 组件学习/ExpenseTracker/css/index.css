@@ -1,0 +1,126 @@
+:root{
+    --box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    display: flex; /*将整个元素变成flex，在调整至中间位置*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  /*视口高度*/
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    margin: 30px auto;
+    width: 350px;
+}
+h1{
+    letter-spacing: 1px;  /*每个字符之间的宽度*/
+    margin: 0;
+}
+h3{
+    border-bottom: 1px solid black;  /*width style color*/
+    padding-bottom: 10px;
+    margin: 40px 0 10px; /*上 左右 下*/
+}
+h4{
+    margin: 0;
+    text-transform: uppercase;  /*指定字符的大小写*/
+}
+.inc-exp-container{
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.inc-exp-container > div{  /*子类选择器*/
+    flex: 1px;
+    text-align: center;
+}
+.inc-exp-container > div:first-of-type{ /*子类选择器中选择第一个元素*/
+    border-right: 1px solid white;
+}
+.money{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+.money.plus{  /*组合选择器*/
+    color: #2ecc71;
+}
+.money.minus{
+    color: #c0392b;
+}
+label{
+    display: inline-block;  /*综合了block和inline的特点*/
+    margin: 10px 0;
+}
+input[type='text'],
+input[type='number']{
+    border: 1px solid black;
+    border-radius: 2px; /*圆角的设置*/
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+.btn{
+    cursor: pointer;
+    background-color: #9c88ff;
+    box-shadow: var(--box-shadow);
+    color: white;
+    border: 0;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+}
+.btn:focus,
+.delete-btn:focus{
+    outline: 0;
+}
+.list{
+    list-style-type: none;  /*消除掉之前li的样式*/
+    padding: 0;
+    margin-bottom: 40px;
+}
+.list li{
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between; /*更加合理地排布*/
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+.list li.plus{
+    border-right: 5px solid #2ecc71;
+}
+.list li.minus{
+    border-right: 5px solid #c0392b;
+}
+.delete-btn{
+    cursor: pointer;
+    background-color: red;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%,-50%); /*平移*/
+    opacity: 0;
+    transition: opacity 0.3s ease;  /*变换的样式的变形*/
+}
+.list li:hover .delete-btn{ /*块元素选择*/
+    opacity: 1; /*随着上面定义的样式进行变换*/
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form" class="form">
+            <h2>Register With Us</h2>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter username">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter email">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter Password">
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="password2">Confirm Password</label>
+                <input id="password2" type="password" placeholder="Enter Password Again">
+                <small>Error Message</small>
+            </div>
+            <input type="submit" id="submit"> <!--在这个Button中可以改变按键中的值-->
+        </form>
+    </div>
+    <script src="./js/index.js" type="text/javascript"></script>
+</body>
+</html>

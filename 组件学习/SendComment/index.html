@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>弹幕功能</title>
+</head>
+<body>
+<div id="box" class="box"></div>
+<input type="text" id="txt" />
+<button onclick="send()">发送弹幕</button>
+</body>
+<script>
+    function $(str) {
+        return document.getElementById(str);
+    }
+    function send() {
+        var word = $('txt').value;
+        var span = document.createElement('span');
+        var top = parseInt(Math.random() * 500) - 20;
+        var color1 = parseInt(Math.random() * 256); // 随机实现
+        var color2 = parseInt(Math.random() * 256);
+        var color3 = parseInt(Math.random() * 256);
+        var color = "rgb(" + color1 + "," + color2 + "," + color3 + ")";
+        top = top < 0 ? 0 : top;
+        span.style.position = 'absolute';
+        span.style.top = top + "px";
+        span.style.color = color;
+        span.style.left = '500px';
+        span.style.whiteSpace = 'nowrap';
+        var nub = (Math.random() * 10) + 1;
+        span.setAttribute('speed', nub);
+        span.speed = nub;
+        span.innerHTML = word;
+        $('box').appendChild(span); // 最重要的一句话
+        $('txt').value = "";
+    }
+    setInterval(move, 200);
+    function move() {
+        var spanArray = $('box').children;
+        for (var i = 0; i < spanArray.length; i++) {
+            console.log(spanArray[i].style.left)
+            spanArray[i].style.left = parseInt(spanArray[i].style.left) - spanArray[i].speed + 'px';
+            if(parseInt(spanArray[i].style.left)<0){
+                spanArray[i].style.left = '500px'
+            }
+        }
+    }
+</script>
